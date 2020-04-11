@@ -1,0 +1,35 @@
+{
+  "name": "node-mvc-boilerplate",
+  "version": "1.0.0",
+  "description": "[![License][license-badge]][license-url] [![Commitizen][commitizen-badge]][commitizen-url]",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helderburato/node-mvc-boilerplate.git"
+  },
+  "keywords": [],
+  "author": "Helder Burato Berto <helder.burato@gmail.com> (https://helder.dev/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/helderburato/node-mvc-boilerplate/issues"
+  },
+  "homepage": "https://github.com/helderburato/node-mvc-boilerplate#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.5",
+    "prettier": "^2.0.4",
+    "pretty-quick": "^2.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
