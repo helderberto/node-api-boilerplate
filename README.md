@@ -27,6 +27,8 @@ $ yarn install
 $ yarn dev OR yarn start // => DEV / PROD
 ```
 
+_Note: To set your environment variables you need to duplicate the file `.env.example` and rename to `.env`._
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
