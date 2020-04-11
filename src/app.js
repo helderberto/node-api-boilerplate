@@ -23,8 +23,8 @@ app.set('port', process.env.PORT || 3000);
 /**
  * Express load middlewares
  */
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 app.use(logger('dev'));
 app.use(compression());
 app.use(routes);
@@ -36,7 +36,7 @@ app.listen(app.get('port'), () => {
   console.log(
     '🏁 Server is running on http://localhost:%s on %s mode',
     app.get('port'),
-    app.get('env')
+    app.get('env'),
   );
   console.log('Press CTRL-C to stop\n');
 });
