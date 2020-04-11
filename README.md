@@ -9,23 +9,23 @@
 - [NodeJS](https://nodejs.org/en/);
 - [Yarn](https://yarnpkg.com/);
 
-## Installation
+## Getting Started
 
-Clone the `node-mvc-boilerplate` to your project directory like the following:
+The most quickly way to start your project is following the example:
+
 ```bash
-$ git clone git@github.com:helderburato/node-mvc-boilerplate.git ~/<your-app-name>
+# Get the latest snapshot
+$ git clone git@github.com:helderburato/node-mvc-boilerplate.git ~/<your-project>
+
+# Change directory
+$ cd <your-project>
+
+# Install dependencies
+$ yarn install
+
+# Start your project
+$ yarn dev OR yarn start // => DEV / PROD
 ```
-
-Install project dependencies:
-```bash
-$ cd <your-project-path> && yarn install
-```
-
-## How to Run
-
-- Go to your project directory: `$ cd <your-project-path>`;
-- To run development server: `$ yarn dev`;
-- To run production server: `$ yarn start`;
 
 ## Contributing
 
@@ -37,7 +37,7 @@ We use [SemVer](https://semver.org/) for versioning. For the versions available,
 
 ## Authors
 
-- **Helder Burato Berto** - _Initial work_ - [helderburato](https://github.com/helderburato);
+- **Helder Burato Berto** - _Initial work_ - [helderburato](https://github.com/helderburato)
 
 See also the list of [contributors](https://github.com/helderburato/node-mvc-boilerplate/contributors) who participated in this project.
 
