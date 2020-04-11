@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const logger = require('morgan');
 const compression = require('compression');
 const routes = require('./routes');
+const useMiddlewares = require('./utils/useMiddlewares');
 
 /**
  * Load environment variables from .env file.
@@ -23,11 +24,13 @@ app.set('port', process.env.PORT || 3000);
 /**
  * Express load middlewares
  */
-app.use(cors());
-app.use(express.json());
-app.use(logger('dev'));
-app.use(compression());
-app.use(routes);
+useMiddlewares(
+  cors(),
+  express.json(),
+  logger('dev'),
+  compression(),
+  routes,
+)(app);
 
 /**
  * Start Express server.
