@@ -1,48 +1,34 @@
-const express = require('express');
-const cors = require('cors');
-const dotenv = require('dotenv');
-const logger = require('morgan');
-const compression = require('compression');
-const routes = require('./routes');
-const useMiddlewares = require('./utils/useMiddlewares');
+import express from 'express'
+import cors from 'cors'
+import logger from 'morgan'
+import compression from 'compression'
+import routes from './routes'
 
-/**
- * Load environment variables from .env file.
- */
-dotenv.config({ path: '.env' });
+class App {
+  constructor() {
+    this.server = express()
 
-/**
- * Create Express server.
- */
-const app = express();
+    this.setup()
+    this.middlewares()
+    this.routes()
+  }
 
-/**
- * Express configs.
- */
-app.set('port', process.env.PORT || 3000);
+  setup() {
+    this.server.set('port', process.env.PORT || 3000)
+  }
 
-/**
- * Express load middlewares
- */
-useMiddlewares(
-  cors(),
-  express.urlencoded({ extended: false }),
-  express.json(),
-  logger('dev'),
-  compression(),
-  routes,
-)(app);
+  middlewares() {
+    this.server.use(cors())
+    this.server.use(express.urlencoded({ extended: false }))
+    this.server.use(express.json())
+    this.server.use(logger('dev'))
+    this.server.use(compression())
+    this.server.use(routes)
+  }
 
-/**
- * Start Express server.
- */
-app.listen(app.get('port'), () => {
-  console.log(
-    '🏁 Server is running on http://localhost:%s on %s mode',
-    app.get('port'),
-    app.get('env'),
-  );
-  console.log('Press CTRL-C to stop\n');
-});
+  routes() {
+    this.server.use(routes)
+  }
+}
 
-module.exports = app;
+export default new App().server

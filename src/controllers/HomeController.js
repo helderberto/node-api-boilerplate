@@ -1,5 +1,9 @@
-module.exports = {
+class HomeController {
   index(req, res) {
-    res.send('✨ Welcome to the Node API boilerplate!');
-  },
-};
+    return res.json({
+      message: '✨ Welcome to the Node API boilerplate!',
+    })
+  }
+}
+
+export default new HomeController()

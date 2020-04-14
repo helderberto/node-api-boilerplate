@@ -1,10 +1,8 @@
-const routes = require('express').Router();
+import { Router } from 'express'
+import HomeController from './controllers/HomeController'
 
-const UserController = require('./controllers/UserController');
-const HomeController = require('./controllers/HomeController');
+const routes = new Router()
 
-routes.get('/', HomeController.index);
-routes.get('/users', UserController.index);
-routes.get('/users/:id', UserController.show);
+routes.get('/', HomeController.index)
 
-module.exports = routes;
+export default routes
